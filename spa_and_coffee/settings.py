@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'spa_and_coffee.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'spa_db',
+        'USER': 'spa_user',
+        'PASSWORD': 'spa_first_pass1',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -113,6 +117,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+AUTH_USER_MODEL = 'spa_app.SpaUser'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
